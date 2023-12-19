@@ -23,7 +23,7 @@ const CustomizedContent = (props) => {
             {item === 'users' && <UserOutlined />}
             {item === 'products' && <AppstoreOutlined />}
             {item === 'orders' && <ShoppingCartOutlined />}
-              {` `} {data[item]}
+              {`  `} {data[item]}
           </span>
         </h4>
       ))}
