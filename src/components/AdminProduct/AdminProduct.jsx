@@ -631,7 +631,7 @@ const AdminProduct = () => {
         <Form.Item
           label="Images"
           name="images"
-          rules={[{ required: true, message: 'Please input your images!' }]}
+          rules={[{ required: false, message: 'Please input your images!' }]}
         >
           <WrapperUploadFile onChange={handleOnchangeAvatarDetails} maxCount={5} multiple>
             <Button>Select File</Button>
@@ -731,7 +731,7 @@ const AdminProduct = () => {
           name="image"
           rules={[{ required: true, message: 'Please input your image!' }]}
         >
-          <WrapperUploadFile onChange={handleOnchangeAvatarDetails} maxCount={1} >
+          <WrapperUploadFile onChange={handleOnchangeAvatar} maxCount={1} >
             <Button >Select File</Button>
             {stateProductDetails?.image && (
                       <img src={stateProductDetails?.image} style={{

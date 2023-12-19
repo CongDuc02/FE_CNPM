@@ -11,3 +11,15 @@ body {
 html {
   front-size: 62.5%
 }
+
+.textlabel {
+  display: block;
+  font-size: 16px;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.set {
+  display: flex;
+
+}

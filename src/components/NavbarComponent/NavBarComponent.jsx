@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom'
 import Loading from '../../components/LoadingComponent/Loading'
 import { useSelector } from 'react-redux'
 import { useDebounce } from '../../hooks/useDebounce'
+import Navbar from './Navbar'
+
 const NavBarComponent = () => {
     const searchProduct = useSelector((state) => state?.product?.search)
     const searchDebounce = useDebounce(searchProduct, 500)
@@ -51,15 +53,11 @@ const NavBarComponent = () => {
     const renderContent = (type, options) => {
         switch (type) {
             case 'text':
-                return products.filter((pro) => {
-                        if (searchDebounce === '') {
-                            return pro;
-                        } else if (pro?.name?.toLowerCase()?.includes(searchDebounce?.toLowerCase())) {
-                            return pro;
-                        }
-                    }).map((product, index) => (
-                        <WrapperTextValue key={index}>{product?.name}</WrapperTextValue>
-                        ));
+                return options.map((option) => {
+                    return (
+                        <WrapperTextValue>{option}</WrapperTextValue>
+                    )
+                })
                 
             case 'checkbox':
                 return (
@@ -103,9 +101,14 @@ const NavBarComponent = () => {
     return (
         <div>
             <WrapperLabelText>Danh Mục</WrapperLabelText>
-            <WrapperContent>
-                {renderContent('text', [products])}
-            </WrapperContent>
+            <div style={{ height: "auto" }}>
+                {products?.map((product) => {
+                    return <Navbar
+                        name={product.name}
+                        id={product._id}
+                    />
+                })}
+            </div>
             
             <div style={{margin: '10px 0 0 0', }}>
             <WrapperLabelText>Nơi bán</WrapperLabelText>
@@ -127,7 +130,7 @@ const NavBarComponent = () => {
             <div style={{margin: '10px 0 0 0'}}>
             <WrapperLabelText>Đánh giá</WrapperLabelText>
             <WrapperContent>
-                {renderContent('star', [3, 4, 5])}
+                {renderContent('star', [1, 2, 3, 4, 5])}
             </WrapperContent>
             </div>
 
