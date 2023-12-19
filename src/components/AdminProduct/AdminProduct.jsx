@@ -507,8 +507,8 @@ const AdminProduct = () => {
   return (
     <div>
       <WrapperHeader>Quản lý sản phẩm</WrapperHeader>
-      <div style={{height: 'auto', backgroundColor: '#0dc826', color: 'white', textAlign: 'center' ,marginTop: '10px'}}>
-      <Button  onClick={() => setIsModalOpen(true)}><PlusOutlined style={{fontSize: '10px'}}  />
+      <div style={{marginTop: '10px', }}>
+      <Button style={{backgroundColor: '#16e441', width: '160px'}} onClick={() => setIsModalOpen(true)}><PlusOutlined style={{backgroundColor: '#16e441',fontSize: '16px'}}  />
               Thêm sản phẩm
       </Button>
       </div>
