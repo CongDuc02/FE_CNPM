@@ -3,6 +3,7 @@ import TypeProduct from '../../components/TypeProduct/TypeProduct'
 import { WrapperButtonMore, WrapperProduct, WrapperTypeProduct } from './style'
 import SlideComponent from '../../components/SlideComponent/SlideComponent'
 import Slide1 from '../../Imagess/Image/Slide1.webp'
+import nen from '../../Imagess/Image/nen.png'
 import Slide2 from '../../Imagess/Image/Slide2.webp'
 import Slide3 from '../../Imagess/Image/Slide3.webp'
 import Slide4 from '../../Imagess/Image/Slide4.webp'
@@ -58,7 +59,7 @@ const Homepage = () => {
           )
         })}
       </WrapperTypeProduct>
-      <SlideComponent arrImage={[Slide1, Slide2, Slide3, Slide4]} />
+      <SlideComponent arrImage={[nen]} />
       <WrapperProduct >
             {products?.data?.map((product) => {
               return (
